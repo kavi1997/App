@@ -12,7 +12,7 @@ public class PowerTest2 {
 	public void test() {
 		Controller test=new Controller();
 		int output =test.power(0,0);
-		assertEquals(1,output);
+		assertEquals(0,output);
 	}
 
 }
