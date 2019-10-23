@@ -36,17 +36,15 @@ public class Controller extends HttpServlet {
 		String a= req.getParameter("num");
 		String b= req.getParameter("num1");
 		int res=power(Integer.parseInt(a),Integer.parseInt(b)); 
-		out.println("<h1>"+a+" to the power of "+b+" = "+ res +" "+"</h1>");
+		out.println("<h1>"+a+" + "+b+" = "+ res +" "+"</h1>");
 		out.close();
 		
 			}
 	}
 		public int power(int p,int q){
-			int res=1;
-			for(int i=1;i<=q;i++){
-        		res=res*p;
-			}
-			return res;
+			int res=0;
+			res=p+q;
+		       return res;
    		 }
 				
 	
