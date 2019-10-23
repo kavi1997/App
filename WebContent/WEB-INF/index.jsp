@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Power</title>
+<title>Addition</title>
 <style type=text/css>
 
 input[name="num",name="num1"] {
@@ -46,12 +46,12 @@ div {
 <div class="bg-text" align="center">
 	<form action ="controller" name="loginForm" method="post">
 			<table>
-			<h1> POWER</h1>
+			<h1> Addition </h1>
 				<tr><td><input type="number" size=25  placeholder="Enter Base Value" name="num" required/></td></tr>
 				<tr><td>
 				<tr><td><input type="number" size=25  placeholder="Enter Power Value" name="num1" required/></td></tr>
 				<tr><td>
-				<tr><td><input type="submit"  value="generate power" name="Button"  > <input type="Reset"></td></tr>
+				<tr><td><input type="submit"  value="Add" name="Button"  > <input type="Reset"></td></tr>
 			</table>
 			<br>
 	</form>
