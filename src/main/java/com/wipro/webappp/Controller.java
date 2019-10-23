@@ -32,7 +32,7 @@ public class Controller extends HttpServlet {
 		
 		PrintWriter out= resp.getWriter();
 		String trigerFrom = req.getParameter("Button");
-		if (trigerFrom.equals("generate power")) {
+		if (trigerFrom.equals("Add")) {
 		String a= req.getParameter("num");
 		String b= req.getParameter("num1");
 		int res=power(Integer.parseInt(a),Integer.parseInt(b)); 
