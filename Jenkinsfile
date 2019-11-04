@@ -58,19 +58,19 @@ stage("SonarQube analysis") {
    stage('Nexus Artifact Upload') {
           steps{
              withCredentials([usernamePassword(credentialsId: 'nexus_credentials', passwordVariable: 'pass', usernameVariable: 'userId')]) {
-            sh   'curl -F file=@target/demopipe-${BUILD_NUMBER}.war -u $userId:$pass http://ec2-18-224-155-110.us-east-2.compute.amazonaws.com:8081/nexus/content/repositories/devopstraining/freestyle/falcons/demopipe-${BUILD_NUMBER}.war'
+            sh   'curl -F file=@target/pipe-${BUILD_NUMBER}.war -u $userId:$pass http://ec2-18-224-155-110.us-east-2.compute.amazonaws.com:8081/nexus/content/repositories/devopstraining/pipeline/pipe-${BUILD_NUMBER}.war'
              
              }}
           }
 
- stage('Chef and Tomcat'){
+ /*stage('Chef and Tomcat'){
  steps{
         sh 'sudo /home/ec2-user/apache-tomcat-8.5.47/bin/./startup.sh '
         sh 'sudo git -C /home/ec2-user/chef/tomcat pull'
  sh 'sudo rm -rf ~/chef/tomcat/tomcat/recipes/local-mode-cache' 
  sh 'sudo chef-solo -c /home/ec2-user/chef/tomcat/tomcat/recipes/solo.rb -j /home/ec2-user/chef/tomcat/tomcat/recipes/dna.json'
  }
- }
+ }*/
   
 }
         post { 
