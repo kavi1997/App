@@ -89,6 +89,6 @@ stage("SonarQube analysis") {
  {
 curl -X POST -H "Content-Type: application/json" \
  -d '{"text":"'"$JOB_NAME"' - #'"$BUILD_NUMBER"' Failed on '"$GIT_BRANCH"' branch - '"$BUILD_URL"'"}' \
- "https://falcons-ips1477.slack.com//services/hooks/jenkins-ci?token=$SLACK_API_TOKEN"
+ "https://hooks.slack.com/services/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?token=$SLACK_API_TOKEN"
  }
 }
