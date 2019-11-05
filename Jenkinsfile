@@ -85,10 +85,10 @@ stage("SonarQube analysis") {
             slackSend (color: '#FF0000', message: " JOB FAILED: Job '${JOB_NAME} [${BUILD_NUMBER}]' (${BUILD_URL})")
          }
     }*/
- if ["$GIT_BRANCH" = "origin/master"]
-then
+ post
+ {
 curl -X POST -H "Content-Type: application/json" \
  -d '{"text":"'"$JOB_NAME"' - #'"$BUILD_NUMBER"' Failed on '"$GIT_BRANCH"' branch - '"$BUILD_URL"'"}' \
  "https://falcons-ips1477.slack.com//services/hooks/jenkins-ci?token=$SLACK_API_TOKEN"
-fi
+ }
 }
