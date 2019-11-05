@@ -72,9 +72,9 @@ stage("SonarQube analysis") {
  sh 'sudo rm -rf ~/chef/tomcat/tomcat/recipes/local-mode-cache' 
  sh 'sudo chef-solo -c /home/ec2-user/chef/tomcat/tomcat/recipes/solo.rb -j /home/ec2-user/chef/tomcat/tomcat/recipes/dna.json'
  }
- }*/
+ }
   
-}
+}*/
       /*  post { 
          success { 
             echo 'notified to slack '
@@ -86,6 +86,8 @@ stage("SonarQube analysis") {
          }
     }*/
  
-curl -X POST -H "Content-Type: application/json" \ -d '{"text":"'"$JOB_NAME"' - #'"$BUILD_NUMBER"' Failed on '"$GIT_BRANCH"' branch - '"$BUILD_URL"'"}' \ "https://hooks.slack.com/services/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?token=$SLACK_API_TOKEN"
+curl -X POST -H "Content-Type: application/json" \ 
+ -d '{"text":"'"$JOB_NAME"' - #'"$BUILD_NUMBER"' Failed on '"$GIT_BRANCH"' branch - '"$BUILD_URL"'"}' \
+ "https://hooks.slack.com/services/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?token=$SLACK_API_TOKEN"
 
 }
