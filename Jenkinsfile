@@ -91,3 +91,4 @@ stage("SonarQube analysis") {
  "https://falcons-ips1477.slack.com/services/hooks/jenkins-ci?token=$SLACK_API_TOKEN"
 }*/
 }
+}
